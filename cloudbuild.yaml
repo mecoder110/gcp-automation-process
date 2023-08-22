@@ -1,4 +1,7 @@
 steps:
+  - name: 'maven'
+    entrypoint: 'mvn'
+    args: ['clean', 'install', '-DskipTests']
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:${SHORT_SHA}', '.']
