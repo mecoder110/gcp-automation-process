@@ -4,12 +4,12 @@ steps:
     args: ['clean', 'install', '-DskipTests']
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:latest${SHORT_SHA}', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:${SHORT_SHA}', '.']
             
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push',  'us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/my-app:latest${SHORT_SHA}']
+    args: ['push',  'us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:${SHORT_SHA}']
 
 # Store images in Google Artifact Registry 
 images:
-  - us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/my-app:latest${SHORT_SHA}
+  - us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:${SHORT_SHA}
