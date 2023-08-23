@@ -12,4 +12,4 @@ steps:
 
 # Store images in Google Artifact Registry 
 images:
-  - us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/hello-world-app:latest${SHORT_SHA}
+  - us-central1-docker.pkg.dev/clean-bindery-395406/my-docker-repo/my-app:latest${SHORT_SHA}
